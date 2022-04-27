@@ -1,24 +1,24 @@
-const nombre = document.querySelector('.nombre')
-const numero = document.querySelector('.numero')
-const direccion = document.querySelector('.direccion')
-const btnAgregarTarea = document.querySelector('.btn-agregar-tarea')
+const name = document.querySelector('.name');
+const tel = document.querySelector('.tel');
+const adress = document.querySelector('.adress');
+const btnAdd = document.querySelector('.btn-add-name');
 
-const listadoTareas = document.querySelector('.listado-tareas');
+const contactList=document.querySelector('.contact-list')
 
 const db = window.localStorage;
 
 
-btnAgregarTarea.onclick =()=>{
-    let contacto = {
-        id: Math.random(1,100),
-        nombre:nombre.value,
-        numero:numero.value,
-        direccion:direccion.value
-        
+btnAdd.addEventListener('click',() => {
+        let contact = {
+            id:Math.random(1,100),
+            name:name.value,
+            tel: tel.value,
+            adress: adress.value,
     }
-    guardarContacto(db,contacto)
-}
+     saveContact(db, contact)
+})
 
-cargarContactos(db,listadoTareas);
+loadContact(db, contactList)
+
 
 
